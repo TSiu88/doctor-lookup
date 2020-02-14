@@ -7,6 +7,7 @@ export class Lookup{
       return jsonifiedResponse;
     } catch(error){
       console.error("Error handling request: " + error.message);
+      alert("Error handling request: " + error.message);
     }
   }
   

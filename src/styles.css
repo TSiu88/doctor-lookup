@@ -1,5 +1,6 @@
 body{
-  background-color: #305773;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #305773 35%, #0b6c80 100%);
 }
 
 h1{
@@ -28,6 +29,7 @@ hr{
 ol {
   border: 2px solid white;
   background-color: #dfeef0;
+  opacity: 0.8;
 }
 
 a{
@@ -47,12 +49,15 @@ a{
   color: white;
 }
 
-
-
 .doctor:nth-child(odd){
   background-color: #47D4ED;
 }
 
 .doctor:nth-child(even){
   background-color: #dfeef0;
+  opacity: 0.8;
+}
+
+#startScreen{
+  text-align: center;
 }

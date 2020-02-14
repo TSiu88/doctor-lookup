@@ -72,13 +72,13 @@ This program calls an API for information and dynamically adds profiles for the 
 
 ## Screenshots
 
-<!-- _Here is a snippet of what the input looks like:_
+_Here is a snippet of what the input looks like:_
 
-![Snippet of input fields](img/snippet1.png)
+![Snippet of input fields](src/img/snippet1.png)
 
 _Here is a preview of what the output looks like:_
 
-![Snippet of output box](img/snippet2.png) -->
+![Snippet of output box](src/img/snippet2.png)
 
 <!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
 
