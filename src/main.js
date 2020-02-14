@@ -20,7 +20,7 @@ $(document).ready(function(){
     })();
 
     function getOutput(response){
-      $("#results").append(`<h2>Search Results <span id='name'></span> <span id='issue'> at ${location}</h2>`);
+      $("#results").append(`<h2>Search Results <span id='name'></span> <span id='issue'></span> at ${location}</h2>`);
 
       if (name != ""){
         $("#name").text("for Doctor: " + name);
@@ -43,11 +43,16 @@ $(document).ready(function(){
           if(response.data[i].profile.middle_name != undefined){
             middleName = response.data[i].profile.middle_name;
           }
-          let fullName = response.data[i].profile.first_name + " " + middleName + " " + response.data[i].profile.last_name
-          $("#doctors").append(`<li id="doctor${i}"> ${fullName}</li>`);
+          let fullName = response.data[i].profile.first_name + " " + middleName + " " + response.data[i].profile.last_name;
+          $("#doctors").append(`<li id="doctor${i}"> ${fullName} ${response.data[i].profile.title}</li>`);
+
+          $("#doctors").append(`<ul id="profile${i}"></ul>`);
+          $(`#profile${i}`).append(`<li>Address: ${response.data[i].practices[0].visit_address.street}</li>`);
+          $(`#profile${i}`).append(`<li>Phone: ${response.data[i].practices[0].phones[0].number}</li>`);
+          $(`#profile${i}`).append(`<li>Accepting new Patients?: ${response.data[i].practices[0].accepts_new_patients}</li>`);
         }
       }
-      
+      console.log(response.data[0].practices[0]);
     }
   });
 });
