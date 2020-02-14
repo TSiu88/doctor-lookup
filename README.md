@@ -53,8 +53,11 @@ Since this page uses an API, an API KEY is required to use this program.  *An AP
 * _If something goes wrong with the program's API call and results in an error (anything not a 200 OK), it returns a notification of the error._
   * _Example Input: API call_
   * _Example Output: error = 401 Error, API Key not valid_
+* _User does not input any fields and clicks search, then search is only by location._
+  * _Example Input: search=doctors, location=Seattle, name="", issue=""_
+  * _Example Output: 7948 doctors found_
 * _User enters a search for doctors but no doctors meet the criteria, so program returns a notification that no doctors that met the criteria were found._
-  * _Example Input: search=doctors location=Seattle, name=Chopper, medical issue=can't-get-on-this-island disease_
+  * _Example Input: search=doctors, location=Seattle, name=Chopper, medical issue=can't-get-on-this-island disease_
   * _Example Output: notification = No doctors that met the criteria were found_
 * _User enters a search for doctors by name in a location and receives a list of doctors._
   * _Example Input: search=doctors, location=seattle, name=house_
@@ -62,6 +65,9 @@ Since this page uses an API, an API KEY is required to use this program.  *An AP
 * _User enters a medical issue and location and receives a list of doctors._
   * _Example Input: search=doctors, location=seattle, medical issue=sore throat_
   * _Example Output: 104 doctors found_
+* _When doctors found, info on each doctor's name, address, phone number, website, and if accepting new patients is displayed in results._
+  * _Example Input: search=doctors, location=seattle, name=house_
+  * _Example Output: name= Marc Houser, address: 15th Ave E, phone number=206326XXXX, website=none, accepting new pts=true_
 
 ## Screenshots
 

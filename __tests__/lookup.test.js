@@ -1,4 +1,4 @@
-import { Thing } from './thing.js';
+import { Thing } from './../src/lookup';
 
 describe('Thing', () => {
   let thing;

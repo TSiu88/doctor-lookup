@@ -2,10 +2,26 @@
 <html>
   <head>
     <meta charset="UTF-8"> 
-    <title>TITLE</title>
+    <title>Seattle Doctor Lookup</title>
   </head>
   <body>
-    <h1>THIS IS A HEADER</h1>
-    <p>THIS IS A PARAGRAPH</p>
+    <div class="container">
+      <h1>Seattle Doctor Lookup with BetterDoctor!</h1>
+      
+      <div id="headers">
+        <p>Finding a doctor when you need one can be difficult.  Just input a doctor name or medical issue you are having and we will return a list of doctors in Seattle that may help you.</p>
+        <h2>Start your search here:</h2>
+      </div>
+      
+      <label for="doctorName">Doctor name:</label><br>
+      <input type="text" id="doctorName"><br>
+      <label for="medicalIssue">Medical Issue:</label><br>
+      <input type="text" id="medicalIssue"><br>
+      <button id="searchButton">Search</button>
+      <hr>
+      <div id="results"></div>
+    </div>
+    
+
   </body>
 </html>
