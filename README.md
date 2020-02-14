@@ -6,8 +6,9 @@
 
 ## Description
 
-_README under construction_
-<!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
+_This site is the Week 6 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course.  It is a site for a user to search for doctors in the city of Seattle by name or medical issue they are having using information from the [BetterDoctor API](https://developer.betterdoctor.com)._
+
+_In this program a user will be able to search for doctors and receive their name, address, phone number, website, if they are accepting new patients, and a short bio on them. This program currently only shows the first 10 results or less, depending on how many search results were found and only shows the first practice site information if the doctor works at more than one practice site._ 
 
 ## Setup/Installation Requirements
 
@@ -28,9 +29,9 @@ _README under construction_
 4. Run `npm install` to get all dependencies. 
 5. Run `npm run start` to start up the program
 
-Since this page uses an API, an API KEY is required to use this program.  *An API Key can be gotten by:*
+Since this page uses an API, **an API KEY is required to use this program**.  An API Key can be gotten by:
 1. Go to the site for [BetterDoctor API](https://developer.betterdoctor.com/) and sign up for a free API KEY
-2. Create a new .env file in the root directory and type `API_KEY = (add the API Key given here)`
+2. Create a new .env file in the root directory and type `API_KEY = (Add-API-Key-given-here)`
 3. Allow program to refresh or run `npm run start` again to start up the program
 
 ## Other Technologies Used
@@ -46,7 +47,7 @@ Since this page uses an API, an API KEY is required to use this program.  *An AP
 * _Markdown_
 
 ## Notable Features
-<!-- _features that make project stand out_ -->
+This program calls an API for information and dynamically adds profiles for the doctors found as they are found.  It also replaces values with "Not Available" if the information from the site is not provided.
 
 ## Specifications
 
@@ -65,9 +66,9 @@ Since this page uses an API, an API KEY is required to use this program.  *An AP
 * _User enters a medical issue and location and receives a list of doctors._
   * _Example Input: search=doctors, location=seattle, medical issue=sore throat_
   * _Example Output: 104 doctors found_
-* _When doctors found, info on each doctor's name, address, phone number, website, and if accepting new patients is displayed in results._
+* _When doctors found, info on each doctor's name, address, phone number, website, if accepting new patients, and bio is displayed in results, if the information is available._
   * _Example Input: search=doctors, location=seattle, name=house_
-  * _Example Output: name= Marc Houser, address: 15th Ave E, phone number=206326XXXX, website=none, accepting new pts=true_
+  * _Example Output: name= Marc Houser, address: 15th Ave E, phone number=206326XXXX, website=not available, accepting new pts=true, bio=not available_
 
 ## Screenshots
 
