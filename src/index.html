@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Lemonada&display=swap" rel="stylesheet"> 
     <meta charset="UTF-8"> 
     <title>Seattle Doctor Lookup</title>
   </head>
   <body>
     <div class="container">
-      <h1>Seattle Doctor Lookup with BetterDoctor!</h1>
-      
+      <h1>Seattle Doctor Lookup</h1>
+
       <div id="headers">
-        <p>Finding a doctor when you need one can be difficult.  Just input a doctor name or medical issue you are having and we will return a list of doctors in Seattle that may help you.</p>
+        <p>Finding a doctor when you need one can be difficult.  Just input a doctor name or medical issue you are having and we will return a list of doctors in Seattle that may help you from the information provided by <a href="developer.betterDoctor.com">betterDoctor</a>.</p>
         <h2>Start your search here:</h2>
       </div>
       
-      <label for="doctorName">Doctor name:</label><br>
-      <input type="text" id="doctorName"><br>
-      <label for="medicalIssue">Medical Issue:</label><br>
-      <input type="text" id="medicalIssue"><br>
-      <button id="searchButton">Search</button>
+      <label for="doctorName">Doctor name:</label><br class="breaks">
+      <input type="text" id="doctorName"><br class="breaks">
+      <label for="medicalIssue">Medical Issue:</label><br class="breaks">
+      <input type="text" id="medicalIssue"><br class="breaks">
+      <button class = "btn" id="searchButton">Search</button>
       <hr>
       <div id="results"></div>
     </div>

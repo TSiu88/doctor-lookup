@@ -9,6 +9,8 @@ $(document).ready(function(){
   $("#searchButton").click(function(event){
     event.preventDefault();
     $("#results").empty();
+    $("#headers").hide();
+    $(".breaks").hide();
     let name = $("#doctorName").val();
     let issue = $("#medicalIssue").val();
     let location = "wa-seattle";
@@ -46,7 +48,7 @@ $(document).ready(function(){
             middleName = response.data[i].profile.middle_name;
           }
           let fullName = response.data[i].profile.first_name + " " + middleName + " " + response.data[i].profile.last_name;
-          $("#doctors").append(`<li id="doctor${i}"> ${fullName} ${response.data[i].profile.title}</li>`);
+          $("#doctors").append(`<li class="doctor" id="doctor${i}"> <strong>${fullName} ${response.data[i].profile.title}</strong></li>`);
 
           addProfile(response, i);
         }

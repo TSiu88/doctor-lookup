@@ -1,0 +1,58 @@
+body{
+  background-color: #305773;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Lemonada', cursive;
+  font-weight: bold;
+  color: #47D4ED;
+}
+
+h2{
+  color: #47D4ED;
+}
+
+p, label{
+  color: white;
+}
+
+input{
+  margin-right: 15px;
+}
+
+hr{
+  border: 1px solid white;
+}
+
+ol {
+  border: 2px solid white;
+  background-color: #dfeef0;
+}
+
+a{
+  color: #c32da0;
+}
+
+.btn{
+  color: white;
+  background-color: #c32da0;
+  border: 3px solid #c2179a;
+  margin: 10px;
+}
+
+.btn:hover{
+  background-color: #c32da0;
+  filter: brightness(120%);
+  color: white;
+}
+
+
+
+.doctor:nth-child(odd){
+  background-color: #47D4ED;
+}
+
+.doctor:nth-child(even){
+  background-color: #dfeef0;
+}
