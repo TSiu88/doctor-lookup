@@ -1,7 +1,6 @@
-# _Assignment Name_
+# _Doctor Lookup_
 
-#### _Brief desc of Project, 02.6.2020_
-<!-- ##### _Version 1.1 Updated 01.11.2020_ -->
+#### _Week 6 Independent Friday Assignment for Epicodus, 02.14.2020_
 
 #### By _**Tiffany Siu**_
 
@@ -17,20 +16,22 @@ _README under construction_
 * _Webpack_
 * _Node.js_
 * _NPM_
+* _API KEY for BetterDoctor API_
 
 ### Instructions
 
-<!-- *This page may be viewed by:*
+*This page may be viewed by:*
 
 1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
 2. Clone the [repository](https://github.com/TSiu88/beep-boop.git) from my [GitHub page](https://github.com/TSiu88)
 3. Use a command line/Bash to move to the project directory with `cd project-directory`
 4. Run `npm install` to get all dependencies. 
-5. Run `npm run start` to start up the program -->
+5. Run `npm run start` to start up the program
 
-<!-- _This page may be viewed by cloning the [repository](https://github.com/TSiu88/beep-boop.git) from my [GitHub page](https://github.com/TSiu88) and opening the **index.html** file in any web browser._ -->
-
-<!-- _Other things need to run like servers, databases, code, how to install and use program_ -->
+Since this page uses an API, an API KEY is required to use this program.  *An API Key can be gotten by:*
+1. Go to the site for [BetterDoctor API](https://developer.betterdoctor.com/) and sign up for a free API KEY
+2. Create a new .env file in the root directory and type `API_KEY = (add the API Key given here)`
+3. Allow program to refresh or run `npm run start` again to start up the program
 
 ## Other Technologies Used
 
@@ -49,28 +50,18 @@ _README under construction_
 
 ## Specifications
 
-<!-- * _List of features the program should do, from simplest to more complex, handling all possible cases.  Can do as text or put in table, with example input and output_
-  * _Example Input: expected input_
-  * _Example Output: expected output_
-* _Example: The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels._
-  * _Example Input: 3_
-  * _Example Output: 3_
-* _Example: The program adds "way" to single-letter words beginning with a vowel._
-  * _Example Input: i_
-  * _Example Output: iway_
-* _The program adds "way" to multi-letter words beginning with a vowel._
-  * _Example Input: open_
-  * _Example Output: openway_
-* _The program takes the single consonant from the beginning of the word and adds to the end with "ay"_
-  * _Example Input: latin_
-  * _Example Output: atinlay_
-* _The program takes all consecutive consonants from the beginning of the word and adds them to the end with "ay"_
-  * _Example Input: translator_
-  * _Example Output: anslatortray_
-* _The program takes beginning consonants and if it contains "q", also take the "u" after it and add them to the end with "ay"_
-  * _Example Input: squeal_
-  * _Example Output: ealsquay_
-* _Etc._ -->
+* _If something goes wrong with the program's API call and results in an error (anything not a 200 OK), it returns a notification of the error._
+  * _Example Input: API call_
+  * _Example Output: error = 401 Error, API Key not valid_
+* _User enters a search for doctors but no doctors meet the criteria, so program returns a notification that no doctors that met the criteria were found._
+  * _Example Input: search=doctors location=Seattle, name=Chopper, medical issue=can't-get-on-this-island disease_
+  * _Example Output: notification = No doctors that met the criteria were found_
+* _User enters a search for doctors by name in a location and receives a list of doctors._
+  * _Example Input: search=doctors, location=seattle, name=house_
+  * _Example Output: 1 doctor found in Seattle, name=Houser_
+* _User enters a medical issue and location and receives a list of doctors._
+  * _Example Input: search=doctors, location=seattle, medical issue=sore throat_
+  * _Example Output: 104 doctors found_
 
 ## Screenshots
 
