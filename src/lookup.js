@@ -2,7 +2,7 @@ export class Lookup{
 
   async getCoordinates(location){
     try{
-      let response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=4516a69014934f309dba42332c71bdab`);
+      let response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${process.env.GEOCODE_API_KEY}`);
       let jsonifiedResponse = await response.json();
       return jsonifiedResponse;
     } catch(error){
@@ -22,5 +22,4 @@ export class Lookup{
     }
   }
   
-
 }

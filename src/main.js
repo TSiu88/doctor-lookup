@@ -28,9 +28,7 @@ $(document).ready(function(){
     })();
 
     function getLocation(json, distance){
-      console.log(json.results);
       let locationString = json.results[0].geometry.lat.toFixed(3) + "," + json.results[0].geometry.lng.toFixed(3) +","+distance;
-      console.log(locationString);
       return locationString;
     }
 

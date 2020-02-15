@@ -35,7 +35,7 @@ Since this page uses multiple APIs, **an API KEY for each is required to use thi
 2. Create a new .env file in the root directory and type `API_KEY = (Add-API-Key-given-here)`
 3. Go to the site for [OpenCageData API](https://opencagedata.com/) and sign up for a free API KEY
 4. Add geocoder API Key in .env file created in Step 2 by typing `GEOCODE_API_KEY = (Add-API-Key-given-here)`
-4. Allow program to refresh or run `npm run start` again to start up the program
+5. Allow program to refresh or run `npm run start` again to start up the program
 
 ## Other Technologies Used
 
@@ -85,14 +85,6 @@ _Here is a snippet of what the input looks like:_
 _Here is a preview of what the output looks like:_
 
 ![Snippet of output box](src/img/snippet2.png)
-
-## Test Case Example
-<!-- _Tests are done through Jest and are run from the command line prompt with `npm test`._
-_Some example tests:_
-![Snippet of an example test](img/test1.png)
-
-![Snippet of an example result](img/test2.png) -->
-<!-- _describe and show how to run tests with `code` examples}_ -->
 
 ## Known Bugs
 
