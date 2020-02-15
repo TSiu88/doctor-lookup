@@ -13,13 +13,26 @@ $(document).ready(function(){
     $(".breaks").hide();
     let name = $("#doctorName").val();
     let issue = $("#medicalIssue").val();
-    let location = "wa-seattle";
+    let distance = $("#distance").val();
+    let location = $("#location").val();
+    if(location ===""){
+      location = "Seattle";
+    }
 
     (async () => {
       let lookup = new Lookup();
-      const response = await lookup.getDoctors(location, name, issue);
+      const coordinatesJson = await lookup.getCoordinates(location);
+      let coordinates = getLocation(coordinatesJson, distance);
+      const response = await lookup.getDoctors(coordinates, name, issue);
       getOutput(response);
     })();
+
+    function getLocation(json, distance){
+      console.log(json.results);
+      let locationString = json.results[0].geometry.lat.toFixed(3) + "," + json.results[0].geometry.lng.toFixed(3) +","+distance;
+      console.log(locationString);
+      return locationString;
+    }
 
     function getOutput(response){
       $("#results").append(`<h2>Search Results <span id="count"></span> of <span id="total"></span> <span id='name'></span> <span id='issue'></span> at ${location}</h2>`);
@@ -39,7 +52,7 @@ $(document).ready(function(){
       $("#total").text(response.meta.total);
 
       if (count === 0){
-        $("#results").append("No doctors that met the inputted criteria were found.");
+        $("#results").append(`<p>No doctors that met the inputted criteria were found.</p>`);
       } else {
         $("#results").append(`<ol type="1" id="doctors"></ol>`);
         for (let i =0; i < count; i++){

@@ -6,9 +6,9 @@
 
 ## Description
 
-_This site is the Week 6 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course.  It is a site for a user to search for doctors in the city of Seattle by name or medical issue they are having using information from the [BetterDoctor API](https://developer.betterdoctor.com)._
+_This site is the Week 6 Friday independent assignment for Epicodus' full time Intro to Programming and C#/React course.  It is a site for a user to search for doctors in whatever city is inputted by name or medical issue they are having using information from the [BetterDoctor API](https://developer.betterdoctor.com) and a geocoder from [OpenCageData API](https://opencagedata.com)._
 
-_In this program a user will be able to search for doctors and receive their name, address, phone number, website, if they are accepting new patients, and a short bio on them. This program currently only shows the first 10 results or less, depending on how many search results were found and only shows the first practice site information if the doctor works at more than one practice site._ 
+_In this program a user will be able to search for doctors and receive their name, address, phone number, website, if they are accepting new patients, and a short bio on them. This program currently only shows the first 10 results or less, depending on how many search results were found and only shows the first practice site information if the doctor works at more than one practice site.  However it does search for doctors in different cities._ 
 
 ## Setup/Installation Requirements
 
@@ -18,6 +18,7 @@ _In this program a user will be able to search for doctors and receive their nam
 * _Node.js_
 * _NPM_
 * _API KEY for BetterDoctor API_
+* _API KEY for OpenCageData API_
 
 ### Instructions
 
@@ -29,10 +30,12 @@ _In this program a user will be able to search for doctors and receive their nam
 4. Run `npm install` to get all dependencies. 
 5. Run `npm run start` to start up the program
 
-Since this page uses an API, **an API KEY is required to use this program**.  An API Key can be gotten by:
+Since this page uses multiple APIs, **an API KEY for each is required to use this program**.  The API Keys can be gotten by:
 1. Go to the site for [BetterDoctor API](https://developer.betterdoctor.com/) and sign up for a free API KEY
 2. Create a new .env file in the root directory and type `API_KEY = (Add-API-Key-given-here)`
-3. Allow program to refresh or run `npm run start` again to start up the program
+3. Go to the site for [OpenCageData API](https://opencagedata.com/) and sign up for a free API KEY
+4. Add geocoder API Key in .env file created in Step 2 by typing `GEOCODE_API_KEY = (Add-API-Key-given-here)`
+4. Allow program to refresh or run `npm run start` again to start up the program
 
 ## Other Technologies Used
 
@@ -47,25 +50,28 @@ Since this page uses an API, **an API KEY is required to use this program**.  An
 * _Markdown_
 
 ## Notable Features
-This program calls an API for information and dynamically adds profiles for the doctors found as they are found.  It also replaces values with "Not Available" if the information from the site is not provided.
+This program calls multiple APIs for information and dynamically adds profiles for the doctors found.  It also replaces values with "Not Available" if the information from the site is not provided.  It first uses a geocoder to find the coordinates of the place the user inputted and then modifies the received coordinates into a format readable by the second API.  The modified coordinates are sent to the second API to receive the list of doctors.
 
 ## Specifications
 
 * _If something goes wrong with the program's API call and results in an error (anything not a 200 OK), it returns a notification of the error._
   * _Example Input: API call_
   * _Example Output: error = 401 Error, API Key not valid_
-* _User does not input any fields and clicks search, then search is only by location._
-  * _Example Input: search=doctors, location=Seattle, name="", issue=""_
-  * _Example Output: 7948 doctors found_
+* _User does not input any fields and clicks search, then search is only by default location._
+  * _Example Input: search=doctors, location=Seattle, name="", issue="", distance=1_
+  * _Example Output: 2900 doctors found_
 * _User enters a search for doctors but no doctors meet the criteria, so program returns a notification that no doctors that met the criteria were found._
-  * _Example Input: search=doctors, location=Seattle, name=Chopper, medical issue=can't-get-on-this-island disease_
+  * _Example Input: search=doctors, location=Grand Line, name=Chopper, medical issue=can't-get-on-this-island disease, distance=1_
   * _Example Output: notification = No doctors that met the criteria were found_
-* _User enters a search for doctors by name in a location and receives a list of doctors._
+* _User enters a search for doctors by name and receives a list of doctors._
   * _Example Input: search=doctors, location=seattle, name=house_
   * _Example Output: 1 doctor found in Seattle, name=Houser_
-* _User enters a medical issue and location and receives a list of doctors._
+* _User enters a medical issue and receives a list of doctors._
   * _Example Input: search=doctors, location=seattle, medical issue=sore throat_
   * _Example Output: 104 doctors found_
+* _User enters a location and receives a list of doctors._
+  * _Example Input: search=doctors, location=san francisco, distance=1_
+  * _Example Output: 791 doctors found_
 * _When doctors found, info on each doctor's name, address, phone number, website, if accepting new patients, and bio is displayed in results, if the information is available._
   * _Example Input: search=doctors, location=seattle, name=house_
   * _Example Output: name= Marc Houser, address: 15th Ave E, phone number=206326XXXX, website=not available, accepting new pts=true, bio=not available_
@@ -79,8 +85,6 @@ _Here is a snippet of what the input looks like:_
 _Here is a preview of what the output looks like:_
 
 ![Snippet of output box](src/img/snippet2.png)
-
-<!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
 
 ## Test Case Example
 <!-- _Tests are done through Jest and are run from the command line prompt with `npm test`._
