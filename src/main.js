@@ -72,7 +72,8 @@ $(document).ready(function(){
       let fullAddress = response.data[i].practices[0].visit_address.street + ", " + response.data[i].practices[0].visit_address.city + ", " + response.data[i].practices[0].visit_address.state + " " + response.data[i].practices[0].visit_address.zip;
       $(`#profile${i}`).append(`<li><strong>Address:</strong> ${fullAddress}</li>`);
 
-      $(`#profile${i}`).append(`<li><strong>Phone:</strong> <a href="tel:${response.data[i].practices[0].phones[0].number}">${response.data[i].practices[0].phones[0].number}</a></li>`);
+      
+      $(`#profile${i}`).append(`<li><strong>Phone:</strong> <a href="tel:${response.data[i].practices[0].phones[0].number}">${formatNumber(response.data[i].practices[0].phones[0].number)}</a></li>`);
 
       let website = "Not Available.";
       if(response.data[i].practices[0].website != undefined){
@@ -89,6 +90,13 @@ $(document).ready(function(){
         bio = response.data[i].profile.bio;
       }
       $(`#profile${i}`).append(`<li><strong>Bio:</strong> ${bio}</li>`);
+    }
+
+    function formatNumber(phoneNum){
+      let area = phoneNum.slice(0,3);
+      let first = phoneNum.slice(3,6);
+      let end = phoneNum.slice(6);
+      return "(" + area + ")" + first + "-" + end;
     }
 
   });
